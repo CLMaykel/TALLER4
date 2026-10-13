@@ -1,0 +1,86 @@
+:root {
+  --primario: #0f766e;
+  --primario-oscuro: #115e59;
+  --fondo: #eef8f6;
+  --texto: #172033;
+  --suave: #667085;
+  --borde: #e4e7ec;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 36px 16px;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.contenedor {
+  width: min(100%, 650px);
+  margin: 0 auto;
+  padding: 34px;
+  background: #fff;
+  border: 1px solid #edf0f5;
+  border-radius: 18px;
+  box-shadow: 0 16px 45px rgba(30, 41, 59, .08);
+}
+
+.encabezado { text-align: center; margin-bottom: 28px; }
+.etiqueta { color: var(--primario); font-size: 11px; font-weight: 800; letter-spacing: 1.5px; }
+h1 { margin: 8px 0; font-size: 32px; }
+.encabezado p, footer { color: var(--suave); }
+.encabezado p { margin: 0; }
+
+.formulario { display: flex; flex-direction: column; gap: 9px; }
+label { font-size: 14px; font-weight: 700; }
+input, textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 9px;
+  color: var(--texto);
+  font: inherit;
+  outline: none;
+}
+input:focus, textarea:focus { border-color: var(--primario); box-shadow: 0 0 0 3px #4f46e51a; }
+textarea { resize: vertical; }
+.boton {
+  border: 0;
+  border-radius: 9px;
+  padding: 12px 14px;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .15s, filter .15s;
+}
+.boton:hover { filter: brightness(.94); transform: translateY(-1px); }
+.boton-principal { margin-top: 5px; background: var(--primario); }
+.boton-principal:hover { background: var(--primario-oscuro); }
+.exportacion { display: flex; gap: 10px; margin: 18px 0 30px; }
+.exportacion .boton { flex: 1; }
+.boton-json { background: #0f9f83; }
+.boton-xml { background: #e28a28; }
+.titulo-lista { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+h2 { margin: 0; font-size: 19px; }
+.contador { padding: 5px 10px; border-radius: 20px; background: #ccfbf1; color: var(--primario); font-size: 12px; font-weight: 700; }
+.lista-tareas { display: grid; gap: 10px; margin: 14px 0 0; padding: 0; list-style: none; }
+.elemento-tarea { display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 15px; background: #f8fafc; border: 1px solid var(--borde); border-left: 4px solid var(--primario); border-radius: 9px; }
+.detalle-tarea { min-width: 0; }
+.detalle-tarea h3 { margin: 0 0 5px; font-size: 16px; overflow-wrap: anywhere; }
+.detalle-tarea p { margin: 0 0 7px; color: #475467; font-size: 14px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.detalle-tarea small { color: #98a2b3; font-size: 11px; }
+.btn-eliminar { flex: 0 0 auto; padding: 8px 10px; background: #fee4e2; color: #b42318; font-size: 12px; }
+.mensaje-vacio { padding: 20px 10px; color: var(--suave); text-align: center; }
+footer { margin-top: 25px; text-align: center; font-size: 12px; }
+
+@media (max-width: 520px) {
+  body { padding: 16px 10px; }
+  .contenedor { padding: 24px 18px; }
+  h1 { font-size: 27px; }
+  .exportacion { flex-direction: column; }
+  .elemento-tarea { align-items: flex-start; }
+}

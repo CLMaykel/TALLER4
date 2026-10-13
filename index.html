@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestor de tareas de Maykel</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <main class="contenedor">
+    <header class="encabezado">
+      <span class="etiqueta">EL ESPACIO DE MAYKEL</span>
+      <h1>Mis tareas, Maykel</h1>
+      <p>Organiza tus pendientes de forma fácil y rápida.</p>
+    </header>
+
+    <form id="formulario-tareas" class="formulario">
+      <label for="titulo-tarea">Título de la tarea</label>
+      <input type="text" id="titulo-tarea" maxlength="80" placeholder="Ej. Terminar el informe" required>
+      <label for="descripcion-tarea">Descripción</label>
+      <textarea id="descripcion-tarea" rows="3" maxlength="250" placeholder="Anota los detalles que necesitas recordar" required></textarea>
+      <button type="submit" class="boton boton-principal">+ Agregar tarea</button>
+    </form>
+
+    <section class="exportacion" aria-label="Exportar tareas">
+      <button type="button" id="btn-exportar-json" class="boton boton-json">Descargar JSON</button>
+      <button type="button" id="btn-exportar-xml" class="boton boton-xml">Descargar XML</button>
+    </section>
+
+    <section class="seccion-tareas">
+      <div class="titulo-lista">
+        <h2>Mis tareas activas</h2>
+        <span id="contador-tareas" class="contador">0 tareas</span>
+      </div>
+      <ul id="lista-tareas" class="lista-tareas" aria-live="polite"></ul>
+      <p id="mensaje-vacio" class="mensaje-vacio">Todavía no tienes tareas. Agrega la primera arriba.</p>
+    </section>
+    <footer>Las tareas se guardan en este navegador.</footer>
+  </main>
+  <script src="aplicacion.js"></script>
+</body>
+</html>
